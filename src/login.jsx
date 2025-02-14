@@ -6,16 +6,16 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
-    e.preventDefault();
+    e.preventDefault ();
     // Add login validation logic here
     navigate("/dashboard");
   };
 
   return (
-    <div className="login-container">
+    <div className="login-  container">
       <div className="login-card">
         <h1>Login</h1>
-        <form onSubmit={handleLogin}>
+        <form onSubmit= {handleLogin}>
           <input
             type="text"
             placeholder="Username"
@@ -29,7 +29,7 @@ const Login = () => {
             required
           />
           <button type="submit" className="login-button">
-            Login
+            Login button
           </button>
         </form>
       </div>
