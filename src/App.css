@@ -1,55 +1,140 @@
-body {
-  font-family: Arial, sans-serif;
+/* css for login page */
+* {
   margin: 0;
   padding: 0;
-  background-color: #f0f4f8;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
 .login-container {
   display: flex;
-  justify-content: center;
+  min-height: 100vh;
+}
+
+.login-form-section {
+  flex: 1;
+  display: flex;
   align-items: center;
-  height: 100%;
+  justify-content: center;
+  background-color: white;
+  padding: 20px;
 }
 
-.login-card {
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
-  width: 300px;
-  text-align: center;
+.login-form-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
 }
 
-.login-card h1 {
+.login-form-container h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.form-group {
   margin-bottom: 1.5rem;
-  font-size: 1.5rem;
 }
 
-.login-input {
+.form-group input {
   width: 100%;
-  padding: 0.75rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  padding: 1rem;
+  border: 1px solid #e1e1e1;
+  border-radius: 12px;
   font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
 }
 
-.login-button {
+.form-group input:focus {
+  border-color: #475569;
+}
+
+.sign-in-button {
   width: 100%;
-  padding: 0.75rem;
-  background-color: #007bff;
+  padding: 1rem;
+  background-color: #475569;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 12px;
   font-size: 1rem;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.login-button:hover {
-  background-color: #0056b3;
+.sign-in-button:hover {
+  background-color: #334155;
 }
+
+.signup-section {
+  display: none;
+  flex: 0.7;
+  background-color: #475569;
+  color: white;
+  padding: 0px;
+}
+
+.signup-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+.signup-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.signup-content p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.sign-up-button {
+  padding: 1rem 3rem;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.sign-up-button:hover {
+  background-color: white;
+  color: #475569;
+}
+
+
+@media (min-width: 1024px) {
+  .signup-section {
+    display: block;
+  }
+}
+
+/* Media query for larger screens */
+
+
+/* css for login page */
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+/*css for signup*/
+.signupH1{
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 3rem;
+}
+
+
+
+
+
+
+
+/*css for signup*/
