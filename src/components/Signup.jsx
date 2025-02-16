@@ -1,7 +1,6 @@
-
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import '../App.css';
 
 function Signup() {
   const [username, setUsername] = useState('');
@@ -11,8 +10,33 @@ function Signup() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your login logic here
-    console.log('Login attempt with:', { username, email, password});
+    
+    // Create a user object
+    const newUser = {
+      username,
+      email,
+      password // Note: In a real application, never store passwords in plain text
+    };
+
+    // Get existing users from local storage or initialize an empty array
+    const existingUsers = JSON.parse(localStorage.getItem('users') || '[]');
+
+    // Add the new user
+    existingUsers.push(newUser);
+
+    // Save the updated users array back to local storage
+    localStorage.setItem('users', JSON.stringify(existingUsers));
+
+    // Log the signup attempt (you can remove this in production)
+    console.log('Signup successful:', newUser);
+
+    // Clear the form
+    setUsername('');
+    setEmail('');
+    setPassword('');
+
+    // Redirect to login page
+    navigate('/');
   };
 
   return (
@@ -20,19 +44,17 @@ function Signup() {
       {/* Left section */}
       <div className="login-form-section">
         <div className="login-form-container">
-          <h1 >Sign Up</h1>
+          <h1>Sign Up</h1>
           <form onSubmit={handleSubmit}>
-            
-          <div className="form-group">
+            <div className="form-group">
               <input
-                type="username"
+                type="text"
                 placeholder="Username"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 required
               />
             </div>
-
             <div className="form-group">
               <input
                 type="email"
@@ -73,7 +95,6 @@ function Signup() {
       </div>
     </div>
   );
-
 }
 
 export default Signup;

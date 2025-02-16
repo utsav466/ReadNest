@@ -9,8 +9,22 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your login logic here
-    console.log('Login attempt with:', { email, password });
+    
+    // Get users from local storage
+    const users = JSON.parse(localStorage.getItem('users') || '[]');
+
+    // Check if user exists and password matches
+    const user = users.find(u => u.email === email && u.password === password);
+
+    if (user) {
+      // Successful login
+      console.log('Login successful:', user);
+      // Navigate to dashboard
+      navigate('/dashboard');
+    } else {
+      // Failed login
+      alert('Invalid email or password');
+    }
   };
 
   return (
