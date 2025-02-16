@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import logo from '../image/logoR2.svg';
 import '../App.css';
 
 function Login() {
@@ -60,7 +61,13 @@ function Login() {
       </div>
 
       {/* Right section */}
+     
       <div className="signup-section">
+      <img className="readNestLogo"
+          src={logo}
+          alt="ReadNest Logo"
+          // className="absolute top-8 right-8 h-20 w-20"
+        />
         <div className="signup-content">
           <h2>New Here?</h2>
           <p>Manage Your Library with Ease.</p>

@@ -319,3 +319,81 @@ tr:hover {
   }
 }
 
+
+
+
+/* settings page */
+/* Existing styles remain unchanged */
+
+/* Settings Styles */
+.settings-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.settings-container h1 {
+  color: #334155;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.settings-form {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.checkbox-label,
+.select-label {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.checkbox-label input[type="checkbox"] {
+  margin-left: auto;
+}
+
+.icon {
+  margin-right: 10px;
+  color: #475569;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: white;
+}
+
+.save-button {
+  background-color: #475569;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.save-button:hover {
+  background-color: #334155;
+}
+
+@media (max-width: 768px) {
+  .settings-container {
+    padding: 10px;
+  }
+}
+

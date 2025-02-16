@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import logo from '../image/logoR2.svg';
 import '../App.css';
 
 function Signup() {
@@ -44,7 +45,7 @@ function Signup() {
       {/* Left section */}
       <div className="login-form-section">
         <div className="login-form-container">
-          <h1>Sign Up</h1>
+          <h1 className="signup-text">Sign Up</h1>
           <form onSubmit={handleSubmit}>
             <div className="form-group">
               <input
@@ -82,6 +83,8 @@ function Signup() {
 
       {/* Right section */}
       <div className="signup-section">
+        <img src={logo} alt="readNestLogo" />
+        
         <div className="signup-content">
           <h2>Already have an account?</h2>
           <p>Manage Your Library with Ease.</p>
