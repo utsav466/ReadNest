@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom"
 import "../App.css"
 
 function ForgotPassword() {
-  const [username, setUsername] = useState("")
   const [email, setEmail] = useState("")
   const [newPassword, setNewPassword] = useState("")
   const [confirmPassword, setConfirmPassword] = useState("")
@@ -33,23 +32,14 @@ function ForgotPassword() {
     localStorage.setItem("users", JSON.stringify(users))
 
     alert("Password updated successfully!")
-    navigate("/login")
+    navigate("/")
   }
 
   return (
     <div className="forgot-password-container">
       <div className="forgot-password-form">
-        <h1>Forgot Password</h1>
+        <h1>Change Password</h1>
         <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <input
-              type="text"
-              placeholder="Username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              required
-            />
-          </div>
           <div className="form-group">
             <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
           </div>

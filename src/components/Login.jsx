@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import logo from "../image/logoR2.svg"
+import logo from "../image/logoR4.svg"
 import "../App.css"
 
 function Login() {

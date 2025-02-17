@@ -1,13 +1,22 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import logo from '../image/logoR2.svg';
+import logo from '../image/logoR4.svg';
 import '../App.css';
 
 function Signup() {
+  const[fullName, setFullName] = useState('');
+  const[phoneNumber, setPhoneNumber] = useState('');
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+
+  const handlePhoneNumberChange = (e) => {
+    const value = e.target.value;
+    if (value.length <= 10 && /^[0-9]*$/.test(value)) {
+      setPhoneNumber(value);
+    }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -32,6 +41,8 @@ function Signup() {
     console.log('Signup successful:', newUser);
 
     // Clear the form
+    setFullName('');
+    setPhoneNumber(''); 
     setUsername('');
     setEmail('');
     setPassword('');
@@ -47,6 +58,26 @@ function Signup() {
         <div className="login-form-container">
           <h1 className="signup-text">Sign Up</h1>
           <form onSubmit={handleSubmit}>
+          <div className="form-group">
+              <input
+                type="text"
+                placeholder="Full Name"
+                value={fullName}
+                onChange={(e) => setFullName(e.target.value)}
+                required
+              />
+            </div>
+
+            <div className="form-group">
+              <input
+                type="text"
+                placeholder="Phone Number"
+                value={phoneNumber}
+                onChange={handlePhoneNumberChange}
+                required
+              />
+            </div>
+
             <div className="form-group">
               <input
                 type="text"
