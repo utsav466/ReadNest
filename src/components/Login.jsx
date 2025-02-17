@@ -1,32 +1,34 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import logo from '../image/logoR2.svg';
-import '../App.css';
+"use client"
+
+import { useState } from "react"
+import { useNavigate } from "react-router-dom"
+import logo from "../image/logoR2.svg"
+import "../App.css"
 
 function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const navigate = useNavigate();
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    
+    e.preventDefault()
+
     // Get users from local storage
-    const users = JSON.parse(localStorage.getItem('users') || '[]');
+    const users = JSON.parse(localStorage.getItem("users") || "[]")
 
     // Check if user exists and password matches
-    const user = users.find(u => u.email === email && u.password === password);
+    const user = users.find((u) => u.email === email && u.password === password)
 
     if (user) {
       // Successful login
-      console.log('Login successful:', user);
+      console.log("Login successful:", user)
       // Navigate to dashboard
-      navigate('/dashboard');
+      navigate("/dashboard")
     } else {
       // Failed login
-      alert('Invalid email or password');
+      alert("Invalid email or password")
     }
-  };
+  }
 
   return (
     <div className="login-container">
@@ -56,31 +58,29 @@ function Login() {
             <button type="submit" className="sign-in-button">
               Sign In
             </button>
+            <div className="forgot-password-link">
+              <button type="button" onClick={() => navigate("/forgot-password")} className="text-button">
+                Forgot Password?
+              </button>
+            </div>
           </form>
         </div>
       </div>
 
       {/* Right section */}
-     
       <div className="signup-section">
-      <img className="readNestLogo"
-          src={logo}
-          alt="ReadNest Logo"
-          // className="absolute top-8 right-8 h-20 w-20"
-        />
+        <img className="readNestLogo" src={logo || "/placeholder.svg"} alt="ReadNest Logo" />
         <div className="signup-content">
           <h2>New Here?</h2>
           <p>Manage Your Library with Ease.</p>
-          <button 
-            onClick={() => navigate('/signup')} 
-            className="sign-up-button"
-          >
+          <button onClick={() => navigate("/signup")} className="sign-up-button">
             Sign Up
           </button>
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Login;
+export default Login
+
