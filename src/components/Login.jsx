@@ -2,8 +2,9 @@
 
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import logo from "../image/logoR4.svg"
+
 import "../App.css"
+import logo from "../image/LogoRx1.svg"
 
 function Login() {
   const [email, setEmail] = useState("")
@@ -32,53 +33,35 @@ function Login() {
 
   return (
     <div className="login-container">
-      {/* Left section */}
-      <div className="login-form-section">
-        <div className="login-form-container">
-          <h1>Login to Your Account</h1>
-          <form onSubmit={handleSubmit}>
-            <div className="form-group">
-              <input
-                type="email"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <input
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-            </div>
-            <button type="submit" className="sign-in-button">
-              Sign In
-            </button>
-            <div className="forgot-password-link">
-              <button type="button" onClick={() => navigate("/forgot-password")} className="text-button">
-                Forgot Password?
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
+    <div className="login-card">
+      <div className="login-form">
+        <div className="logoRN"><img src={logo} alt="logo" /></div>
 
-      {/* Right section */}
-      <div className="signup-section">
-        <img className="readNestLogo" src={logo || "/placeholder.svg"} alt="ReadNest Logo" />
-        <div className="signup-content">
-          <h2>New Here?</h2>
-          <p>Manage Your Library with Ease.</p>
-          <button onClick={() => navigate("/signup")} className="sign-up-button">
-            Sign Up
+       
+        <h1>Login to Your Account</h1>
+        <form onSubmit={handleSubmit}>
+          <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+          <button type="submit" className="login-button">
+            Login
           </button>
-        </div>
+
+          <button onClick={() => navigate('forgot-password')} type="button" className="forgot-Password">Forgot password?</button>
+        </form>
+      </div>
+      <div   className="signup-section">
+        <h2>New Here?</h2>
+        <p>Manage Your Library with Ease.</p>
+        <button       onClick={() => navigate('/signup')} className="signup-button">Sign Up</button>
       </div>
     </div>
+  </div>
   )
 }
 

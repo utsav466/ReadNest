@@ -37,13 +37,14 @@ function ForgotPassword() {
 
   return (
     <div className="forgot-password-container">
+      <div className="forgot-password-card">
       <div className="forgot-password-form">
         <h1>Change Password</h1>
         <form onSubmit={handleSubmit}>
-          <div className="form-group">
+          <div className="form-Group">
             <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
           </div>
-          <div className="form-group">
+          <div className="form-Group">
             <input
               type="password"
               placeholder="New password"
@@ -52,7 +53,7 @@ function ForgotPassword() {
               required
             />
           </div>
-          <div className="form-group">
+          <div className="form-Group">
             <input
               type="password"
               placeholder="Confirm Password"
@@ -66,6 +67,8 @@ function ForgotPassword() {
           </button>
         </form>
       </div>
+      </div>
+      
     </div>
   )
 }

@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import logo from '../image/logoR4.svg';
-import '../App.css';
+
+import "../App.css";
 
 function Signup() {
-  const[fullName, setFullName] = useState('');
-  const[phoneNumber, setPhoneNumber] = useState('');
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [fullName, setFullName] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [userName, setUserName] = useState('');
+  const [userEmail, setUserEmail] = useState('');
+  const [userPassword, setUserPassword] = useState('');
   const navigate = useNavigate();
 
   const handlePhoneNumberChange = (e) => {
@@ -20,45 +20,35 @@ function Signup() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    // Create a user object
+
     const newUser = {
-      username,
-      email,
-      password // Note: In a real application, never store passwords in plain text
+      userName,
+      userEmail,
+      userPassword,
     };
 
-    // Get existing users from local storage or initialize an empty array
     const existingUsers = JSON.parse(localStorage.getItem('users') || '[]');
-
-    // Add the new user
     existingUsers.push(newUser);
-
-    // Save the updated users array back to local storage
     localStorage.setItem('users', JSON.stringify(existingUsers));
-
-    // Log the signup attempt (you can remove this in production)
     console.log('Signup successful:', newUser);
 
-    // Clear the form
     setFullName('');
-    setPhoneNumber(''); 
-    setUsername('');
-    setEmail('');
-    setPassword('');
+    setPhoneNumber('');
+    setUserName('');
+    setUserEmail('');
+    setUserPassword('');
 
-    // Redirect to login page
     navigate('/');
   };
 
   return (
-    <div className="login-container">
-      {/* Left section */}
-      <div className="login-form-section">
-        <div className="login-form-container">
-          <h1 className="signup-text">Sign Up</h1>
+    <div className="signup-page-wrapper">
+      <div className="signup-card">
+      <div className="signup-form-area">
+        <div className="signup-form-box">
+          <h1 className="signup-heading">Sign Up</h1>
           <form onSubmit={handleSubmit}>
-          <div className="form-group">
+            <div className="input-field-container">
               <input
                 type="text"
                 placeholder="Full Name"
@@ -67,8 +57,7 @@ function Signup() {
                 required
               />
             </div>
-
-            <div className="form-group">
+            <div className="input-field-container">
               <input
                 type="text"
                 placeholder="Phone Number"
@@ -77,56 +66,53 @@ function Signup() {
                 required
               />
             </div>
-
-            <div className="form-group">
+            <div className="input-field-container">
               <input
                 type="text"
                 placeholder="Username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                value={userName}
+                onChange={(e) => setUserName(e.target.value)}
                 required
               />
             </div>
-            <div className="form-group">
+            <div className="input-field-container">
               <input
                 type="email"
                 placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                value={userEmail}
+                onChange={(e) => setUserEmail(e.target.value)}
                 required
               />
             </div>
-            <div className="form-group">
+            <div className="input-field-container">
               <input
                 type="password"
                 placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                value={userPassword}
+                onChange={(e) => setUserPassword(e.target.value)}
                 required
               />
             </div>
-            <button type="submit" className="sign-in-button">
+            <button type="submit" className="signup-submit-btn">
               Sign Up
             </button>
           </form>
         </div>
       </div>
 
-      {/* Right section */}
-      <div className="signup-section">
-        <img src={logo} alt="readNestLogo" />
-        
-        <div className="signup-content">
+      <div className="signup-info-panel">
+       
+      
+        <div className="signup-info-content">
           <h2>Already have an account?</h2>
           <p>Manage Your Library with Ease.</p>
-          <button 
-            onClick={() => navigate('/')} 
-            className="sign-up-button"
-          >
+          <button onClick={() => navigate('/')} className="login-redirect-btn">
             Login
           </button>
         </div>
       </div>
+      </div>
+
     </div>
   );
 }

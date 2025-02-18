@@ -8,7 +8,7 @@
 /* Sidebar Styles */
 .sidebar {
   width: 250px;
-  background-color: #475569;
+  background-color: #406881;
   color: white;
   padding: 20px;
   transition: all 0.3s ease;
@@ -124,7 +124,7 @@ tr:hover {
   position: fixed;
   top: 20px;
   left: 20px;
-  background-color: #475569;
+  background-color: #406881;
   color: white;
   border: none;
   padding: 10px;
@@ -322,8 +322,8 @@ tr:hover {
 
 
 
-/* settings page */
-/* Existing styles remain unchanged */
+
+
 
 /* Settings Styles */
 .settings-container {
