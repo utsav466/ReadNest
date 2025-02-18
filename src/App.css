@@ -19,7 +19,7 @@
 :root {
   --login-container-height: 600px;
   --login-container-width: 900px;
-  --primary-color: #406881;
+  --primary-color: #476c88;
   --secondary-color: #f0f7ff;
   ;
 }
@@ -134,7 +134,7 @@ input {
 .signup-section {
   flex: 1.8;
   
-  background-color: var(--primary-color);
+  background-color: #476c88;
   color: white;
   padding: 40px;
   display: flex;

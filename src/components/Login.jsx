@@ -11,6 +11,9 @@ function Login() {
   const [password, setPassword] = useState("")
   const navigate = useNavigate()
 
+ 
+
+
   const handleSubmit = (e) => {
     e.preventDefault()
 
@@ -29,6 +32,7 @@ function Login() {
       // Failed login
       alert("Invalid email or password")
     }
+    
   }
 
   return (
