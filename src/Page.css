@@ -204,7 +204,6 @@
 
 
 
-/* ... keep existing code (all styles up to footer) */
 
 /* Updated Footer Styles */
 .footer {
@@ -268,10 +267,10 @@
     color: #a0aec0;
   }
   
-  /* ... keep existing code (responsive design media queries) */
+
   
   @media (max-width: 768px) {
-    /* ... keep existing code */
+
     
     .footer-content {
       grid-template-columns: 1fr;
