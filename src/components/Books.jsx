@@ -10,6 +10,7 @@ const Books = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentBook, setCurrentBook] = useState({ id: null, title: '', author: '', genre: '', status: 'Available' });
   const [isEditing, setIsEditing] = useState(false);
+  
 
   const openModal = (book = null) => {
     if (book) {

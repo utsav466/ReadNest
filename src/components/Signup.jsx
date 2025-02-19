@@ -106,7 +106,7 @@ function Signup() {
         <div className="signup-info-content">
           <h2>Already have an account?</h2>
           <p>Manage Your Library with Ease.</p>
-          <button onClick={() => navigate('/')} className="login-redirect-btn">
+          <button onClick={() => navigate('/login')} className="login-redirect-btn">
             Login
           </button>
         </div>

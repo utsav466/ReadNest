@@ -1,12 +1,12 @@
 "use client"
 
-import { useState } from "react"
-import { FaHome, FaBook, FaUsers, FaCog, FaSignOutAlt, FaBars } from "react-icons/fa"
-import { Link, Routes, Route } from "react-router-dom"
-import Books from "./Books"
-import Users from "./Users"
-import Settings from "./Settings"
-import "../Dashboard.css"
+import { useState } from "react";
+import { FaHome, FaBook, FaUsers, FaCog, FaSignOutAlt, FaBars } from "react-icons/fa";
+import { Link, Routes, Route } from "react-router-dom";
+import Books from "./Books";
+import Users from "./Users";
+import Settings from "./Settings";
+import "../Dashboard.css";
 
 const Dashboard = () => {
   const [showSidebar, setShowSidebar] = useState(false)
@@ -15,8 +15,11 @@ const Dashboard = () => {
     setShowSidebar(!showSidebar)
   }
 
+
   return (
     <div className="dashboard">
+     
+      
       <button className="sidebar-toggle" onClick={toggleSidebar}>
         <FaBars />
       </button>
@@ -49,14 +52,22 @@ const Dashboard = () => {
           </li>
         </ul>
       </div>
+ 
+     
+
       <div className="main-content">
+       
         <Routes>
           <Route path="/" element={<h1>Welcome to the Dashboard</h1>} />
+    
           <Route path="/books" element={<Books />} />
           <Route path="/users" element={<Users />} />
           <Route path="/settings" element={<Settings />} />
         </Routes>
+
+       
       </div>
+    
     </div>
   )
 }
